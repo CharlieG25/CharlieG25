@@ -1,0 +1,297 @@
+import numpy as np 
+
+sudoku = np.zeros((9,9))
+sudoku[0][3] = 8
+sudoku[0][8] = 3
+sudoku[1][0] = 8
+sudoku[1][4] = 7
+sudoku[2][1] = 4
+sudoku[2][4] = 9
+sudoku[2][8] = 6
+sudoku[3][2] = 6
+sudoku[3][5] = 9
+sudoku[4][2] = 2
+sudoku[4][4] = 3
+sudoku[4][6] = 6
+sudoku[5][2] = 9
+sudoku[5][3] = 4
+sudoku[5][6] = 1
+sudoku[6][0] = 1
+sudoku[6][4] = 8
+sudoku[6][5] = 5
+sudoku[6][7] = 9
+sudoku[7][4] = 1
+sudoku[7][8] = 2
+sudoku[8][0] = 2
+sudoku[8][2] = 5
+sudoku[8][5] = 7
+
+sudoku1 = np.zeros((9,9))
+sudoku1[0][3] = 4
+sudoku1[1][5] = 8
+sudoku1[1][7] = 9 
+sudoku1[1][8] = 6
+sudoku1[2][4] = 5
+sudoku1[2][5] = 3
+sudoku1[2][7] = 8
+sudoku1[3][1] = 4 
+sudoku1[3][2] = 8
+sudoku1[4][0] = 2
+sudoku1[4][4] = 4
+sudoku1[4][5] = 9
+sudoku1[4][8] = 1 
+sudoku1[5][0] = 6
+sudoku1[5][6] = 5
+sudoku1[5][8] = 9
+sudoku1[6][0] = 4
+sudoku1[6][3] = 1 
+sudoku1[6][6] = 7
+sudoku1[7][1] = 8
+sudoku1[7][3] = 9
+sudoku1[7][6] = 4
+sudoku1[8][1] = 1 
+sudoku1[8][4] = 7
+sudoku1[8][7] = 2
+
+
+
+sudoku3 = np.zeros((9,9))
+sudoku3[0][0] = 9 
+sudoku3[0][1] = 2 
+sudoku3[0][3] = 8 
+sudoku3[0][4] = 1 
+sudoku3[1][2] = 1 
+sudoku3[2][3] = 2 
+sudoku3[2][4] = 6 
+sudoku3[2][5] = 5 
+sudoku3[3][0] = 5 
+sudoku3[3][2] = 8 
+sudoku3[3][3] = 4 
+sudoku3[3][5] = 2 
+sudoku3[4][1] = 4 
+sudoku3[4][6] = 6 
+sudoku3[4][7] = 8 
+sudoku3[5][1] = 9 
+sudoku3[5][4] = 3 
+sudoku3[5][5] = 8 
+sudoku3[5][6] = 2 
+sudoku3[5][8] = 4 
+sudoku3[6][1] = 3 
+sudoku3[6][2] = 4 
+sudoku3[6][8] = 2 
+sudoku3[7][1] = 8 
+sudoku3[7][4] = 2 
+sudoku3[7][5] = 3 
+sudoku3[7][7] = 7 
+sudoku3[7][8] = 9 
+sudoku3[8][6] = 5 
+sudoku3[8][8] = 8  
+
+# 4 = medium
+sudoku4 = np.zeros((9,9)) 
+sudoku4[0][8] = 8
+sudoku4[1][4] = 5
+sudoku4[1][6] = 9
+sudoku4[1][8] = 1
+sudoku4[2][0] = 6
+sudoku4[2][5] = 7
+sudoku4[2][8] = 5
+sudoku4[3][1] = 3
+sudoku4[3][4] = 6
+sudoku4[3][7] = 9
+sudoku4[4][0] = 5
+sudoku4[4][3] = 3
+sudoku4[4][5] = 4
+sudoku4[4][6] = 1
+sudoku4[5][1] = 6
+sudoku4[5][2] = 4
+sudoku4[5][4] = 2
+sudoku4[5][5] = 9
+sudoku4[5][8] = 3
+sudoku4[6][1] = 7
+sudoku4[6][4] = 9
+sudoku4[6][8] = 4
+sudoku4[7][2] = 9
+sudoku4[7][4] = 8
+sudoku4[7][5] = 1
+sudoku4[7][6] = 7
+sudoku4[7][7] = 6
+sudoku4[8][0] = 2
+sudoku4[8][1] = 5
+sudoku4[8][5] = 3 
+
+
+#5 = hard 
+sudoku5 = np.zeros((9,9))
+sudoku5[0][1] = 2
+sudoku5[0][4] = 1
+sudoku5[0][5] = 3
+sudoku5[0][7] = 6
+sudoku5[1][2] = 5
+sudoku5[1][3] = 6
+sudoku5[1][6] = 3
+sudoku5[1][7] = 4
+sudoku5[3][0] = 1
+sudoku5[3][2] = 2
+sudoku5[3][4] = 7
+sudoku5[3][7] = 8
+sudoku5[3][8] = 5
+sudoku5[4][1] = 9
+sudoku5[4][5] = 2
+sudoku5[5][0] = 7
+sudoku5[5][4] = 3
+sudoku5[6][3] = 3
+sudoku5[6][5] = 5
+sudoku5[6][6] = 9
+sudoku5[7][4] = 2
+sudoku5[7][7] = 5
+sudoku5[7][8] = 1
+sudoku5[8][3] = 8
+sudoku5[8][7] = 7 
+
+
+#6  = expert
+sudoku6 = np.zeros((9,9))
+sudoku6[0][5] = 1
+sudoku6[0][7] = 4
+sudoku6[1][5] = 9
+sudoku6[1][8] = 6
+sudoku6[2][0] = 4
+sudoku6[2][1] = 7
+sudoku6[2][6] = 8
+sudoku6[3][3] = 1
+sudoku6[3][6] = 4
+sudoku6[3][7] = 7
+sudoku6[4][0] = 7
+sudoku6[4][3] = 5
+sudoku6[4][4] = 9
+sudoku6[4][5] = 8
+sudoku6[5][1] = 1
+sudoku6[5][3] = 7
+sudoku6[5][7] = 3
+sudoku6[6][5] = 3
+sudoku6[7][2] = 2
+sudoku6[8][0] = 5
+sudoku6[8][2] = 8
+sudoku6[8][3] = 4
+sudoku6[8][6] = 9 
+
+
+#7 = world's hardest 
+sudoku7 = np.zeros((9,9)) 
+sudoku7[0][0] = 8
+sudoku7[1][2] = 3
+sudoku7[1][3] = 6
+sudoku7[2][1] = 7
+sudoku7[2][4] = 9
+sudoku7[2][6] = 2
+sudoku7[3][1] = 5
+sudoku7[3][5] = 7
+sudoku7[4][4] = 4
+sudoku7[4][5] = 5
+sudoku7[4][6] = 7
+sudoku7[5][3] = 1
+sudoku7[5][7] = 3
+sudoku7[6][2] = 1
+sudoku7[6][7] = 6
+sudoku7[6][8] = 8
+sudoku7[7][2] = 8
+sudoku7[7][3] = 5
+sudoku7[7][7] = 1
+sudoku7[8][1] = 9
+sudoku7[8][6] = 4
+
+
+#8 = 'expert'
+#sudoku8 = np.zeros((9,9))
+#sudoku8[][] =  
+sudokueasy = np.zeros((9,9))
+sudokueasy[0][0] = 1
+sudokueasy[0][2] = 4
+sudokueasy[0][3] = 3
+sudokueasy[0][4] = 8
+sudokueasy[0][5] = 2
+sudokueasy[0][6] = 9
+sudokueasy[0][7] = 5
+sudokueasy[0][8] = 6
+
+sudokueasy[1][0] = 2
+sudokueasy[1][2] = 5
+sudokueasy[1][3] = 4
+sudokueasy[1][4] = 6
+sudokueasy[1][5] = 7
+sudokueasy[1][6] = 1
+sudokueasy[1][7] = 3
+sudokueasy[1][8] = 8
+
+sudokueasy[2][0] = 3
+sudokueasy[2][1] = 8
+sudokueasy[2][2] = 6
+sudokueasy[2][3] = 9
+sudokueasy[2][4] = 5
+sudokueasy[2][5] = 1
+sudokueasy[2][6] = 4
+
+sudokueasy[2][8] = 2
+
+sudokueasy[3][0] = 4
+sudokueasy[3][1] = 6
+sudokueasy[3][2] = 1
+sudokueasy[3][3] = 5
+sudokueasy[3][4] = 2
+sudokueasy[3][5] = 3
+sudokueasy[3][6] = 8
+sudokueasy[3][7] = 9
+sudokueasy[3][8] = 7
+
+sudokueasy[4][0] = 7
+sudokueasy[4][1] = 3
+sudokueasy[4][2] = 8
+sudokueasy[4][3] = 1
+sudokueasy[4][4] = 4
+sudokueasy[4][5] = 9
+sudokueasy[4][6] = 6
+sudokueasy[4][7] = 2
+sudokueasy[4][8] = 5
+
+sudokueasy[5][0] = 9
+sudokueasy[5][1] = 5
+sudokueasy[5][2] = 2
+sudokueasy[5][3] = 8
+sudokueasy[5][4] = 7
+sudokueasy[5][5] = 6
+sudokueasy[5][6] = 3
+sudokueasy[5][7] = 1
+sudokueasy[5][8] = 4
+
+sudokueasy[6][0] = 5
+sudokueasy[6][1] = 2
+sudokueasy[6][2] = 9
+sudokueasy[6][3] = 6
+sudokueasy[6][4] = 3
+sudokueasy[6][5] = 4
+sudokueasy[6][6] = 7
+sudokueasy[6][7] = 8
+sudokueasy[6][8] = 1
+
+sudokueasy[7][0] = 6
+
+sudokueasy[7][2] = 7
+sudokueasy[7][3] = 2
+sudokueasy[7][4] = 9
+sudokueasy[7][5] = 8
+sudokueasy[7][6] = 5
+sudokueasy[7][7] = 4
+sudokueasy[7][8] = 3
+
+
+sudokueasy[8][0] = 8
+sudokueasy[8][1] = 4
+sudokueasy[8][2] = 3
+
+sudokueasy[8][4] = 1
+sudokueasy[8][5] = 5
+sudokueasy[8][6] = 2
+sudokueasy[8][7] = 6
+sudokueasy[8][8] = 9 
+
